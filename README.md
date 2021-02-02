@@ -16,7 +16,7 @@ to find recipes online :
 to save recipe to yor favorite folder:
      say  "save recipe"
      
-to view what recipes you have saved"
+to view what recipes you have saved:
       say "my recipes"
       
 to view  saved recipe :
