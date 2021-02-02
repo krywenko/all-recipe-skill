@@ -1,0 +1,10 @@
+get {group} recipes
+get {group} recipe
+retrieve {group} recipes
+retrieve {group} recipe
+find {group} recipes
+find {group} recipe
+look for {group} recipes
+look for {group} recipe
+{group} recipe
+{group} recipes

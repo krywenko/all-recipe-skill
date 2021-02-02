@@ -1,0 +1,5 @@
+find favorite recipe {title}
+find recipe {title}
+my recipe {title}
+favorite recipe {title}
+recipe {title}
