@@ -1,0 +1,12 @@
+#!/bin/bash 
+
+lynx -dump "https://www.allrecipes.com/search/results/?wt=$1+$2+$3+$4+$5+$6+$7+$8&sort=re"  | #) 
+grep "https://www.allrecipes.com/recipe/" | 
+cut -d"." -f2- |
+sed '/^$/d' |
+sed '$!N; /^\(.*\)\n\1$/!P; D' > tmp_URL
+
+ cat tmp_URL | tr " "  "\n" |sed $'s/https:\/\/www.allrecipes.com\/recipe/\\\/g' | cut -d/ -f3 | tr "-" " " | sed '/^$/d' | sed -ne 's/$/ .. &/p' |  nl -bt -s ... > tmp_recipe
+
+ 
+ 

@@ -1,0 +1,52 @@
+#!/bin/bash
+ lynx -dump $1  | 
+sed -n '/^Ingredients/,/^Nutrition Facts/p;/^Nutrition Facts/q' |     ###### start and end point where recipe is 
+sed -n '/^Ingredients/,/^   Allrecipes/p;/^   Allrecipes/q' | 
+#sed '/^Ingredients/,/^   Ingredient Checklist/{//!d;};' |             ###### data between  two delimiters
+######## clean up of recipe ##########
+sed '/^   (BUTTON) Add all ingredients to shopping list /,/^Directions/{//!d;};' |  ##### delete between the two
+sed '/^   (BUTTON)/d' |                                                             ##### delete lines  starting with (BUTTON) 
+sed '/^   Ingredient Checklist/d' |
+sed '/^   Instructions Checklist/d' |
+sed '/^Nutrition Facts/d' |
+sed '/^       Advertisement/d' |
+sed '/^   ALL RIGHTS RESERVED/d' |
+sed '/^   Printed From Allrecipes.com/d' |
+sed '/^   Allrecipes/d' |
+sed '/^   The ingredient list now/d' |
+sed '/^   Original recipe yields/d' |
+ sed '/^   4/d' |
+ sed '/^   6/d' |
+ sed '/^   2/d' |
+
+
+########## Converting to AI friends words ################
+sed  's/*//g' |  
+sed  's/\[//g' |  
+sed  's/\]//g' |  
+#sed  's/   Note: Recipe directions are for original size.//g' | 
+#sed '/        Add all ingredients to list/,/   You might also like/d' |  
+#sed  's/1\.//g' |  
+#sed  's/Get the magazine//g' | 
+#sed  's/\Prep\>/Preperation Time/g' | 
+#sed  's/\Cook\>/Cooking Time/g' | 
+#sed -e '/Prep/{N;N;N;N;N;d}' | 
+sed  's/\C\>/Celsius /g' | 
+sed  's/\F\>/Fahrenheit /g' | 
+sed  's/\ m\>/ minutes/g'| 
+sed  's/\ h\>/ hour/g' |  
+#sed  's/(//g' |  
+#sed  's/)//g' |  
+#sed  's/2\.//g' |  
+#sed  's/3\.//g' |  
+#sed  's/4\.//g' |  
+#sed  's/5\.//g' |  
+#sed  's/6\.//g' |  
+#sed  's/7\.//g' |  
+#sed  's/8\.//g' |  
+#sed  's/9\.//g' | 
+sed -e '/Directions/{n;N;d}' | 
+sed -e '/Ingredients/{n;N;d}' |
+#sed '/Directions/{n;:l N;/XXX/b; s/\n//; bl}' | 
+#sed  's/      //g' | 
+sed 's/\.     /\n/g'  
