@@ -1,7 +1,0 @@
-#!/bin/bash
-echo $1 |
-#sed  's/½/ one half /g' 
-sed  's/1\/2/ one half /g' |
-#sed  's/\C\>/Celsius /g'  
-sed  's/¼/ one quarter /g' |
-sed  's/\C\>/Celsius /g'
