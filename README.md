@@ -35,4 +35,4 @@ to view directions - say read directions
 
 ![alt text](https://github.com/krywenko/all-recipe-skill/blob/main/CLASSIC_TIRAMISU_.jpg)
 
-![alt text](https://github.com/krywenko/all-recipe-skill/blob/main/spicy_chicken_breasts_)
+![alt text](https://github.com/krywenko/all-recipe-skill/blob/main/spicy_chicken_breasts_.jpg)
