@@ -4,6 +4,7 @@ Mycroft-gui geared skill of Allrecipe.com    the scraping engine can hadle sever
  you should be able to create for other languages just create  bash files for your  languge base  and scraping files 
  
   it requires lynx installed ----  sudo apt install lynx 
+  
 Usage:
 
 
