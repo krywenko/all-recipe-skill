@@ -1,3 +1,0 @@
-#!/bin/bash
-FILE="$( echo -e  $1 | tr  '/' ' ' |  awk '{print $NF}' )"
-echo $FILE 
