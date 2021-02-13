@@ -33,17 +33,7 @@ class AllRecipes(MycroftSkill):
         self.register_entity_file("title.entity")
         self.process = None        
         self.play_list = {
-            'rouladen': join(abspath(dirname(__file__)), 'recipes', 'rouladen'),
-            'simple teriyaki sauce': join(abspath(dirname(__file__)), 'recipes', 'simple-teriyaki-sauce'),
-            'kung pao chicken': join(abspath(dirname(__file__)), 'recipes', 'kung-pao-chicken'),
-            'sweet and sour chicken i': join(abspath(dirname(__file__)), 'recipes', 'sweet-and-sour-chicken-i'),
-            'chinese barbeque pork char siu': join(abspath(dirname(__file__)), 'recipes', 'chinese-barbeque-pork-char-siu'),
-            'tiramisu layer cake': join(abspath(dirname(__file__)), 'recipes', 'tiramisu-layer-cake'),
-            'pork chops italiano': join(abspath(dirname(__file__)), 'recipes', 'pork-chops-italiano'),
-            'restaurant style beef and broccoli': join(abspath(dirname(__file__)), 'recipes', 'restaurant-style-beef-and-broccoli'),
-            'lo mein noodles': join(abspath(dirname(__file__)), 'recipes', 'lo-mein-noodles'),    
-            'king arthur pancakes': join(abspath(dirname(__file__)), 'recipes', 'king-arthur-pancakes'),
-            'sourdough pancakes': join(abspath(dirname(__file__)), 'recipes', 'sourdough-pancakes'),
+
         }      
        
         self.is_MUTE = False
