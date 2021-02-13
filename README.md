@@ -1,6 +1,6 @@
 # all-recipe-skill
 
-Mycroft-gui geared skill
+Mycroft-gui geared skill of Allrecipe.com    the scraping engine can hadle several  recipe sites, foodnetwork, myrecipe, simplyrecipes,eatingwell. bettycrocker and epicuriuos   though only eatingwell and myrecipe  use the same format you have to adjust for the  
 
 Usage:
 
@@ -24,3 +24,7 @@ to view  saved recipe :
        
 to email recipe:
        say "email recipe"
+
+to view ingrdients - say "read ingredients"
+
+to view directions - say read directions
