@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cat $1 |  sed -n '/^Ingredients/,/^Directions/p;/^Directions/q' | sed  '1d;$d' | sed '/^$/d'

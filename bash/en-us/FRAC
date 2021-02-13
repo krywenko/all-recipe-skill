@@ -1,0 +1,54 @@
+#!/bin/bash
+cat $1 |
+sed  's/½/ one half /g' | 
+sed  's/1\/2/ one half /g' | 
+sed  's/⅓/ one third /g' | 
+sed  's/1\/3/ one third /g' |
+sed  's/¼/ one quarter /g' |
+sed  's/1\/4/ one quarter /g' |
+sed  's/⅕/ one fith /g' |
+sed  's/1\/5/ one fith /g' |
+sed  's/⅙/ one sixth /g' |
+sed  's/1\/6/ one sixth /g' |
+sed  's/⅐/ one seventh /g' |
+sed  's/1\/7/ one seventh /g' |
+sed  's/⅛/ one eighth /g' |
+sed  's/1\/8/ one eighth /g' |
+sed  's/⅑/ one ninth /g' |
+sed  's/1\/9/ one ninth /g' |
+sed  's/⅒/ one tenth /g' |
+sed  's/1\/10/ one tenth /g' |
+sed  's/⅔/ two third /g' | 
+sed  's/2\/3/ two third /g' |
+sed  's/⅖/ two fith /g' |
+sed  's/2\/5/ two fith /g' |
+sed  's/¾/ three quarter /g' |
+sed  's/3\/4/ three quarter /g' |
+sed  's/⅗/ three fith /g' |
+sed  's/3\/5/ three fith /g' |
+sed  's/⅜/ three eighth /g' |
+sed  's/3\/8/ three eighth /g' |
+sed  's/⅘/ four fith /g' |
+sed  's/4\/5/ four fith /g' |
+sed  's/⅚/ five sixth /g' |
+sed  's/5\/6/ five sixth /g' |
+sed  's/⅞/ seven eighth /g' |
+sed  's/7\/8/ seven eighth /g' |
+sed  's/⅝/ five eighth /g' |
+sed  's/5\/8/ five eighth /g' |
+############## speech correction  -- recombines broken sentences into  string then  breaks line at period #########
+ sed 's/^/ /' |
+ tr -d '\r\n' |
+ sed 's/\. /\n/g' | 
+ sed 's/\*\*\* /\n/g' |
+ sed  's/\*//g' |
+ sed 's/$/\./' | 
+ sed  's/      //g' | 
+sed  's/\Step\>/######Step /g' | sed 's/######/\n/g'  |
+sed  's/\*//g' |
+ sed 's/   /\n/g'  |
+ sed 's/ Directions/\n&/'  |
+ sed 's/ Steps/\n&/'  |
+ #sed 's/[0-9]  /\n&/'  |
+sed 's:\(Step  [0-9]\):\1\n:g'|
+sed 's/\.     /\n/g'

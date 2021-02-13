@@ -1,0 +1,44 @@
+#!/bin/bash
+ lynx -dump $1  | 
+sed -n '/^Ingredients/,/^Nutrition Facts/p;/^Nutrition Facts/q' |     ###### start and end point where recipe is 
+sed -n '/^Ingredients/,/^   Allrecipes/p;/^   Allrecipes/q' | 
+sed -n '/^Ingredients/,/^   Courtesy of Food Network Magazine/p;/^   Courtesy of Food Network Magazine/q' | 
+sed -n '/^Ingredients/,/^   Rate This Recipe/p;/^   Rate This Recipe/q' | 
+sed -n '/^Ingredients/,/^Related Video/p;/^Related Video/q' | 
+#sed '/^Ingredients/,/^   Ingredient Checklist/{//!d;};' |             ###### data between  two delimiters
+######## clean up of recipe ##########
+sed '/^   (BUTTON) Add all ingredients to shopping list /,/^Directions/{//!d;};' |  ##### delete between the two
+sed '/(BUTTON)/d' |                                                             ##### delete lines  starting with (BUTTON) 
+sed '/^   Ingredient Checklist/d' |
+sed '/^   Instructions Checklist/d' |
+sed '/^Nutrition Facts/d' |
+sed '/^       Advertisement/d' |
+sed '/^   ALL RIGHTS RESERVED/d' |
+sed '/^   Printed From Allrecipes.com/d' |
+sed '/^   Allrecipes/d' |
+sed '/^   The ingredient list now/d' |
+sed '/^   Original recipe yields/d' |
+sed '/^    1./d' |
+sed '/^    2./d' |
+sed '/^    3./d' |
+sed '/^   Rate This Recipe/d' |
+sed '/.jpeg/d'|
+sed '/.jpg/d'|
+sed '/^   Hide Images/d'|
+sed '/Courtesy of Food Network Magazine/d'|
+sed '/Related Video/d'|
+########## Converting to AI friends words ################
+sed  's/\+//g' | 
+sed  's/\]//g' | 
+sed  's/*//g' |  
+sed  's/\[//g' |  
+sed  's/\   X/  /g' |  
+sed  's/\C\>/Celsius /g' | 
+sed  's/\F\>/Fahrenheit /g' | 
+sed  's/\ m\>/ minutes/g'| 
+sed  's/\ h\>/ hour/g' |  
+#sed -e '/Directions/{n;N;d}' | 
+sed -e '/Ingredients/{n;N;d}' |
+
+sed 's/\.     /\n/g'  #> recipetest
+
