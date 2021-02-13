@@ -1,4 +1,0 @@
- #!/bin/bash
- INPUT=$(sed "$1!d" tmp_recipe)
- echo $INPUT | cut -c5-  |sed 's/..$//'
-echo " "
