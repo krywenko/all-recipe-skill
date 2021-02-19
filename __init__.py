@@ -419,7 +419,7 @@ class AllRecipes(MycroftSkill):
 ######### get online recipes ###########       
     @intent_file_handler('online.getrecipe.intent')
     def handle_online_getrecipe(self, message):
-        os.popen("skills/Energy-Monitor/./GUI.sh ")
+        os.popen("skills/all-recipe-skill/./GUI.sh ")
      
         #self.is_MUTE = False
         self.speak_dialog('online.getrecipes')
@@ -679,7 +679,7 @@ class AllRecipes(MycroftSkill):
     #Play random recipe from list
     @intent_file_handler('recipes.pick.intent')
     def handle_recipes_pick(self, message):
-        os.popen("skills/Energy-Monitor/./GUI.sh ")
+        os.popen("skills/all-recipe-skill/./GUI.sh ")
         wait_while_speaking()
         self.speak_dialog('recipes.pick')
         recipe_file = list(self.play_list.values())
@@ -729,7 +729,7 @@ class AllRecipes(MycroftSkill):
     #Pick recipe by title
     @intent_file_handler('pick.recipe.intent')
     def handle_pick_recipe(self, message):
-        os.popen("skills/Energy-Monitor/./GUI.sh ")
+        os.popen("skills/all-recipe-skill/./GUI.sh ")
         self.speak_dialog('pick.recipes')
         wait_while_speaking()
         
@@ -785,7 +785,7 @@ class AllRecipes(MycroftSkill):
     #List recipes in library
     @intent_file_handler('list.recipes.intent')
     def handle_list_recipes(self, message):
-        os.popen("skills/Energy-Monitor/./GUI.sh ")
+        os.popen("skills/all-recipe-skill/./GUI.sh ")
         wait_while_speaking()
         recipe_list = list(self.play_list.keys())
         print(recipe_list)
