@@ -85,6 +85,7 @@ class AllRecipes(MycroftSkill):
        Recipe_str = os.popen("skills/all-recipes-skill/bash/"  + self.lang +  "/./directions " + path).read()
        TITLE_OL = "DIRECTIONS"
        PIC_OL = os.popen("cat PIC_URL ").read()
+       PIC_OL = PIC_OL.strip()
        self.gui.show_image(PIC_OL)
        file0 = open("recipeD.conv","w")
        file0.write(Recipe_str)
@@ -142,6 +143,7 @@ class AllRecipes(MycroftSkill):
        TITLE_OL =  "INGREDIENTS"
        Rcnt = 0
        PIC_OL = os.popen("cat PIC_URL ").read()
+       PIC_OL = PIC_OL.strip() 
        self.gui.show_image(PIC_OL)
        self.gui['title'] = TITLE_OL
        self.gui['reclist'] = Recipe_str
@@ -367,6 +369,7 @@ class AllRecipes(MycroftSkill):
            Recipe_OL = os.popen("skills/all-recipes-skill/bash/" + self.lang +  "/./process_recipe3 " + NUMBER).read()
            TITLE_OL = os.popen("skills/all-recipes-skill/bash/" + self.lang +  "/./TITLE " + NUMBER).read()
            PIC_OL = os.popen("cat PIC_URL ").read()
+           PIC_OL = PIC_OL.strip() 
            self.gui.show_image(PIC_OL)
            #print(Recipe_OL)
            print(TITLE_OL)
@@ -616,6 +619,7 @@ class AllRecipes(MycroftSkill):
            Recipe_OL = os.popen("skills/all-recipes-skill/bash/" + self.lang +  "/./process_recipe3 " + NUMBER).read()
            TITLE_OL = os.popen("skills/all-recipes-skill/bash/" + self.lang +  "/./TITLE " + NUMBER).read()
            PIC_OL = os.popen("cat PIC_URL ").read()
+           PIC_OL = PIC_OL.strip()
            self.gui.show_image(PIC_OL)
 
            TITLE_OL = TITLE_OL.upper()
