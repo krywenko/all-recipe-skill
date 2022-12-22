@@ -3,7 +3,7 @@ INPUT=$(sed "$1!d" tmp_URL)  ## e comment out 2nd and 3rd line and uncomment  3 
  #lynx -dump $1  | 
  
  #lynx -dump $INPUT | grep "https://imagesvc.meredithcorp.io" | sed 's/https:\/\//\'$'\n/g' | sed '$!d' | sed -ne 's/.*/https:\/\/&/p' > PIC_URL  # process picturelink
-lynx -source $INPUT | grep "https://www.allrecipes.com/thmb/" | sed 's/https:\/\//\'$'\n/g' | sed '$!d' | sed -ne 's/.*/https:\/\/&/p' | sed 's/[\"].*//'  > PIC_URL  # process picturelink
+lynx -source $INPUT | grep 'og:image" content="https://www.allrecipes.com/thmb/' | sed 's/https:\/\//\'$'\n/g' | sed '$!d' | sed -ne 's/.*/https:\/\/&/p' | sed 's/[\"].*//'  > PIC_URL  # process picturelink
  
   lynx -dump $INPUT  | 
 
