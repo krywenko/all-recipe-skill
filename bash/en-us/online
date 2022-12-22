@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-lynx -dump "https://www.allrecipes.com/search/results/?wt=$1+$2+$3+$4+$5+$6+$7+$8&sort=re"  | #) 
+lynx -dump "https://www.allrecipes.com/search?q=$1+$2+$3+$4+$5+$6+$7+$8&sort=re"  | #) 
 grep "https://www.allrecipes.com/recipe/" | 
 cut -d"." -f2- |
 sed '/^$/d' |
